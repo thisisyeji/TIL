@@ -1,0 +1,97 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  font-family: "Mulish";
+}
+
+.loading {
+  position: relative;
+  margin: 24px;
+  width: 500px;
+  height: 216px;
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.loading-title {
+  font-size: 18px;
+  line-height: 1.3333333333;
+  font-weight: 400;
+  margin-bottom: 20px;
+  animation-name: flicker;
+  animation-duration: 1000ms;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+.close {
+  width: 16px;
+  height: 16px;
+  border: none;
+  background-image: url(./assets/icon-close.svg);
+  background-color: white;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  cursor: pointer;
+}
+
+.progress-bar {
+  width: 300px;
+  height: 12px;
+  border-radius: 100px;
+  background-color: #e5eaef;
+  position: relative;
+  overflow: hidden;
+}
+
+.progress-bar-gauge {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 12px;
+  border-radius: 100px;
+  background-color: #13ce66;
+  animation-name: loading;
+  animation-duration: 3000ms;
+  animation-timing-function: ease-out;
+  animation-iteration-count: infinite;
+}
+
+@keyframes loading {
+  0% {
+    width: 0;
+    opacity: 1;
+  }
+
+  60% {
+    width: 60%;
+    opacity: 1;
+  }
+
+  80% {
+    width: 100%;
+    opacity: 1;
+  }
+
+  100% {
+    width: 100%;
+    opacity: 0;
+  }
+}
+
+@keyframes flicker {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
